@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "apex.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["VelocityMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

@@ -1,0 +1,21 @@
+BUILD APEX WITHOUT INSTALLING ECLIPSE OR GRADLE ON YOUR WINDOWS COMPUTER
+
+This project has not yet been confirmed to compile. This online build will run the real Gradle build and tests on GitHub's computers. It does not bypass restrictions on your own computer; it simply avoids installing build tools locally.
+
+You need a GitHub account and internet access. GitHub may ask you to verify your account or enable Actions.
+
+1. Open https://github.com/new in your browser and sign in.
+2. Repository name: apex-client-build
+3. Choose Private if you do not want to make your source public. Leave other settings as they are, then click Create repository.
+4. On the new repository page, click the link to upload an existing file (or Add file > Upload files).
+5. On your computer, extract apex-1.2.1.zip. Open the extracted folder named apex. Select everything INSIDE that folder, including the hidden .github folder if your file picker shows it, and upload those files/folders to the GitHub repository. Do not upload the outer ZIP as the only file.
+6. Click Commit changes.
+7. Open the Actions tab in the repository. If asked, click to enable GitHub Actions.
+8. Select “Build Apex Client” in the left list. If it has not started automatically, click “Run workflow”, then the green “Run workflow” button.
+9. Wait for the run to finish. A green check means the Gradle build and tests passed. A red X means the build failed; open the run, click the failed step, and copy the error text to ChatGPT so it can be fixed.
+10. If the run succeeds, open the run page and scroll to Artifacts. Download “apex-client-jar”, then extract it. The JAR inside is the build output to put in your Minecraft .minecraft/mods folder (with matching Fabric Loader and Fabric API installed).
+
+IMPORTANT
+- The build workflow is included at .github/workflows/build.yml. If the GitHub upload page skips hidden folders, create .github/workflows/build.yml in GitHub using Add file > Create new file and paste in the workflow contents from the ZIP.
+- This does not guarantee the project compiles; it is intended to reveal real Gradle/Minecraft API errors.
+- Only use the mod on servers where its use is permitted.
